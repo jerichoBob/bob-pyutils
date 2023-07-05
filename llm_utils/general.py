@@ -13,7 +13,7 @@ def print_wrapped(text, width=80):
 
 def shrink(string):
     """
-    this suck out all of the repeated '.' characters in a string, and replaces them with a single instance of '.'.
+    this sucks out all of the repeated '.' characters in a string, and replaces them with a single instance of '.'.
     used when we're converting pdftext into a single string we can process.
     """
     newstring = re.sub(r"(?is)[\.]+", '.', string)

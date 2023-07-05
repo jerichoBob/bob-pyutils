@@ -1,3 +1,3 @@
-import bob_utils as ut
+import bob_pyutils.general as ut
 
-ut.print_hello()
+print(ut.shrink("123....................................455"))

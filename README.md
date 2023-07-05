@@ -1,18 +1,22 @@
-# pyutils
-A package of python utility functions that I need across projects
+# bob_pyutils
+
+(Probably should be called ```llmutils```)
+
+A package of python utility functions needed across llm projects
 
 ## Installation
 
 ```shell
-% pip install pip install git+https://github.com/jerichoBob/bob_pyutils.git
+% pip install git+https://github.com/jerichoBob/bob-pyutils.git#egg=bob_pyutils
 ```
 
 
 ## Usage
 
 ```python
-import bob_pyutils
-from bob_pyutils import general as bu, summarizers as bs
+import bob_pyutils.general as ut
+
+print(ut.shrink("123....................................455"))
 ```
 
 ## License

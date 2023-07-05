@@ -4,15 +4,15 @@ A package of python utility functions that I need across projects
 ## Installation
 
 ```shell
-% pip install pip install git+https://github.com/jerichoBob/bob-pyutils.git
+% pip install pip install git+https://github.com/jerichoBob/bob_pyutils.git
 ```
 
 
 ## Usage
 
 ```python
-import bob-utils
-from bob-utils import general as bu, summarizers as bs
+import bob_pyutils
+from bob_pyutils import general as bu, summarizers as bs
 ```
 
 ## License

@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: bob-pyutils
+Version: 0.0.1
+Summary: a pip-installable package example
+Home-page: https://github.com/bgse/hellostackoverflow
+Author: Robert Seaton
+Author-email: robert.w.seaton.jr@gmail.com
+License: Apache License 2.0
+Keywords: python,utilities
+License-File: LICENSE

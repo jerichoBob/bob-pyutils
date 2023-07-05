@@ -2,21 +2,27 @@
 
 (Probably should be called ```llmutils```)
 
-A package of python utility functions needed across llm projects
+A package of python utility functions needed across llm projects.
 
 ## Installation
 
 ```shell
-% pip install git+https://github.com/jerichoBob/bob-pyutils.git#egg=bob_pyutils
+% pip install git+https://github.com/jerichoBob/bob-pyutils.git
 ```
 
+which installs the package ```bob_pyutils```.
 
 ## Usage
 
 ```python
-import bob_pyutils.general as ut
+import llm_utils.general as ut
 
 print(ut.shrink("123....................................455"))
+```
+which produces:
+
+```
+123.455
 ```
 
 ## License

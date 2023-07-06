@@ -24,7 +24,7 @@ A package of utility functions needed across llm projects. There are 4 modules i
 % pip install git+https://github.com/jerichoBob/bob-pyutils.git
 ```
 
-which installs the package ```bob_pyutils```.
+which installs the package ```llm_utils```.
 
 ## Usage
 

@@ -50,7 +50,7 @@ def summarize_text_using_split_text(text):
 def summarize_text_using_create_documents(text):
     """
     Summarizer using facebook/bart-large-cnn. 
-    you either need to have the model locally in the saved_models directory, or you need to pass in the Huggingface API key to access the model on Huggingface.
+    Assumes you either have the model locally in the ```saved_models``` directory, or you need to pass in the Huggingface API key to access the model on Huggingface.
     CAUTION: this summarizer is not yet functional
     """
     print("Processing text...")

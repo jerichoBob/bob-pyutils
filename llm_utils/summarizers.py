@@ -5,6 +5,11 @@ from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM, AutoMod
 from langchain.chains.summarize import load_summarize_chain
 
 
+# print(f"saved models dir: {bobutils.find_models_dir()}")
+# model_path = bobutils.get_path_to_model("facebook/bart-large-cnn")
+# print(f"model_path: {model_path}")
+# tokenizer=AutoTokenizer.from_pretrained(model_path)
+
 def summarize_chunks(chunks, model_path, tokenizer_path):
     """
     Produces a summary for each chunk passed in. 
@@ -27,10 +32,6 @@ def summarize_chunks(chunks, model_path, tokenizer_path):
     summary = ' '.join(summaries)
     return summary
 
-# print(f"saved models dir: {bobutils.find_models_dir()}")
-model_path = bobutils.get_path_to_model("facebook/bart-large-cnn")
-# print(f"model_path: {model_path}")
-# tokenizer=AutoTokenizer.from_pretrained(model_path)
 
 def summarize_pdf_doc(pdf_file):
     print(f"Loading {pdf_file}...")
@@ -48,15 +49,23 @@ def summarize_text_using_split_text(text):
 
 def summarize_text_using_create_documents(text):
     """
-    CAUTION: this summarizer doesn't work yet. 
-    The llm isn't compatible with the langchain chain.
-    Don't yet know why.
+    Summarizer using facebook/bart-large-cnn. 
+    you either need to have the model locally in the saved_models directory, or you need to pass in the Huggingface API key to access the model on Huggingface.
+    CAUTION: this summarizer is not yet functional
     """
     print("Processing text...")
-    model_path = bobutils.get_path_to_model("facebook/bart-large-cnn")
+    # model_path = bobutils.get_path_to_model("facebook/bart-large-cnn")
+    model_path = "facebook/bart-large-cnn"
     # llm = AutoModelForSeq2SeqLM.from_pretrained(model_path)
     llm = AutoModel.from_pretrained(model_path)
     # llm = AutoModelForCausalLM.from_pretrained(model_path)
+
+    # texts = text_splitter.split_text(txt)
+    # # Create multiple documents
+    # docs = [Document(page_content=t) for t in texts]
+    # # Text summarization
+    # chain = load_summarize_chain(llm, chain_type='map_reduce')
+    # return chain.run(docs)
 
     docs = chunkers.split_using_create_documents(text)
     chain = load_summarize_chain(llm, 
@@ -94,17 +103,8 @@ core values. Include the vendor’s experience with the services related to Digi
 their Digital Transformation goals. Include overview of vendor’s financial strength. Include the vendors customer retention rate related to success of Digital Transformations.
 """
 def unit_tests():
-    import os
-    os.chdir(path)
-
     print("inside unit_tests()")
     print(summarize_text_using_create_documents(SUMMARIZER_TEST_DATA))
 
 if __name__ == "__main__":
-    import os
-    print(__file__)
-    print(os.path.join(os.path.dirname(__file__), '..'))
-    print(os.path.dirname(os.path.realpath(__file__)))
-    print(os.path.abspath(os.path.dirname(__file__)))
-
     unit_tests()

@@ -27,20 +27,21 @@ def get_path_to_model(model_name):
     return os.path.join(find_models_dir(), model_name)
 
 
-
 def find_models_dir(dir=os.path.abspath('.')):
     for name in glob.glob(f'{dir}/*', recursive=True):
         if os.path.isdir(name) and name.endswith("saved_models"):
             return os.path.abspath(name)
-
+        
     return find_models_dir(os.path.join(dir, "..")) # recursion always carries a little danger with it :D
+
 
 def find_utils_dir(dir=os.path.abspath('.')):
     for name in glob.glob(f'{dir}/*', recursive=True):
         if os.path.isdir(name) and name.endswith("src/utils"):
             return os.path.abspath(name)
-
+        
     return find_utils_dir(os.path.join(dir, "..")) # recursion always carries a little danger with it :D
+
 
 def add_utilsdir_to_path():
     """

@@ -2,8 +2,8 @@ from setuptools import setup
 
 setup(
     name='bob-pyutils',
-    version='0.0.2',
-    description='a pip-installable package example',
+    version='0.0.3',
+    description='a package of utilities for langchain development',
     license='Apache License 2.0',
     packages=['llm_utils'],
     author='Robert Seaton',
